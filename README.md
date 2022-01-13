@@ -15,16 +15,14 @@ This project comes with [Lando](https://lando.dev/) and [DDEV](https://ddev.com/
 
 ```sh
 lando start && lando drush si --existing-config
-lando drush uli
-ab -C [session-cookie-name-here]=[session-cookie-value-here] -n 50 -l https://drupal-benchmark.lndo.site/admin/modules
+./benchmark.sh
 ```
 
 ### DDEV
 
 ```sh
 ddev start && ddev composer install && ddev drush si --existing-config
-ddev drush uli
-ab -C [session-cookie-name-here]=[session-cookie-value-here] -n 50 -l https://drupal-benchmark.ddev.site/admin/modules
+./benchmark.sh
 ```
 
 Ps. [DDEV comes with Mutagen for file syncing built in](https://ddev.readthedocs.io/en/latest/users/performance/), which can make an environment on macOS multiple times faster. You can enable Mutagen for your local DDEV globally with `ddev config global --mutagen-enabled`.
